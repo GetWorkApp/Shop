@@ -1,0 +1,14 @@
+<%= @product.name %>
+<%= @product.price %><br/>
+<%= link_to "Back", products_path %>
+
+<%= form_for(@cart_item) do |f| %>
+
+<%= f.label :quantity %>
+<%= f.text_field :quantity %><br/>
+
+<%= f.label :variant_id %>
+<%= f.select :variant_id, options_from_collection_for_select(Variant.where('product_id = ?', @product.id), :id, :name), :include_blank => true %>
+
+<%= f.submit "Add to cart" %>
+<% end %>

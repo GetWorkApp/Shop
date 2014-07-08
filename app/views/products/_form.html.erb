@@ -1,0 +1,9 @@
+<%= form_for(@product) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br/>
+  <%= f.label :price %>
+  <%= f.text_field :price %><br/>
+  <%= f.label :category_id %>
+  <%= f.collection_select :category_id, Category.all, :id, :name, {prompt: "Select a category"}, {class: "form-control"} %><br/>
+  <%= f.submit "Add new product" %>
+<% end %>

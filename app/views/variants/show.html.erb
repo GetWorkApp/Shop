@@ -1,0 +1,6 @@
+<%= @variant.product.name %><br/>
+<%= @variant.name %><br/>
+<%= link_to "Delete", variant_path(@variant), :method => 'delete', :confirm => 'Are you sure?' %><br/>
+<%= link_to "Edit", edit_variant_path(@variant) %><br/>
+
+<%= link_to "Back", variants_path %>

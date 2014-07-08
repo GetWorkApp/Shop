@@ -1,0 +1,6 @@
+<% @variants.each do |variant| %>
+<%= variant.product.name %>
+<%= variant.name %><br/>
+<% end %>
+
+<%= link_to "Add new variant", new_variant_path %>

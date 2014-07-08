@@ -1,0 +1,27 @@
+<% @categories.each do |category| %>
+<% category.name %>
+<% link_to "Edit", edit_category_path(category) %>
+<% link_to "Delete", category_path(category), :method => "delete", :confirm => "Are you sure?" %>
+<% link_to "Show", category_path(category) %><br/>
+<% end %>
+
+<% link_to "Add new category", new_category_path %>
+
+<% if false %>
+<ul>
+  <% @categories.each do |category| %>
+  <li><%= category.name %></li>
+    <ul>
+    <% category.children.each do |child| %>
+      <li><%= child.name %></li>
+    <% end %>
+    </ul>
+  <% end %>
+</ul>
+<% end %>
+
+<div class="categories">
+  <%= sorted_nested_li(@categories, :name) do |category| %>
+  <%= category.name %>
+  <% end %>
+</div>
